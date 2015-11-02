@@ -13,6 +13,8 @@
 		3D11876A1BE77E8B00FF4CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1187681BE77E8B00FF4CE8 /* Main.storyboard */; };
 		3D11876C1BE77E8B00FF4CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D11876B1BE77E8B00FF4CE8 /* Assets.xcassets */; };
 		3D11876F1BE77E8B00FF4CE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D11876D1BE77E8B00FF4CE8 /* LaunchScreen.storyboard */; };
+		3D1187781BE77F5C00FF4CE8 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1187771BE77F5C00FF4CE8 /* BadgeView.m */; settings = {ASSET_TAGS = (); }; };
+		3D1187801BE780BB00FF4CE8 /* UIView+VZBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D11877F1BE780BB00FF4CE8 /* UIView+VZBadge.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		3D11876B1BE77E8B00FF4CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D11876E1BE77E8B00FF4CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D1187701BE77E8B00FF4CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D1187761BE77F5C00FF4CE8 /* BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeView.h; sourceTree = "<group>"; };
+		3D1187771BE77F5C00FF4CE8 /* BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeView.m; sourceTree = "<group>"; };
+		3D11877E1BE780BB00FF4CE8 /* UIView+VZBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+VZBadge.h"; sourceTree = "<group>"; };
+		3D11877F1BE780BB00FF4CE8 /* UIView+VZBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+VZBadge.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +48,8 @@
 		3D1187531BE77E8B00FF4CE8 = {
 			isa = PBXGroup;
 			children = (
+				3D11877E1BE780BB00FF4CE8 /* UIView+VZBadge.h */,
+				3D11877F1BE780BB00FF4CE8 /* UIView+VZBadge.m */,
 				3D11875E1BE77E8B00FF4CE8 /* VZBadgeDemo */,
 				3D11875D1BE77E8B00FF4CE8 /* Products */,
 			);
@@ -62,6 +70,8 @@
 				3D1187631BE77E8B00FF4CE8 /* AppDelegate.m */,
 				3D1187651BE77E8B00FF4CE8 /* ViewController.h */,
 				3D1187661BE77E8B00FF4CE8 /* ViewController.m */,
+				3D1187761BE77F5C00FF4CE8 /* BadgeView.h */,
+				3D1187771BE77F5C00FF4CE8 /* BadgeView.m */,
 				3D1187681BE77E8B00FF4CE8 /* Main.storyboard */,
 				3D11876B1BE77E8B00FF4CE8 /* Assets.xcassets */,
 				3D11876D1BE77E8B00FF4CE8 /* LaunchScreen.storyboard */,
@@ -149,9 +159,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1187781BE77F5C00FF4CE8 /* BadgeView.m in Sources */,
 				3D1187671BE77E8B00FF4CE8 /* ViewController.m in Sources */,
 				3D1187641BE77E8B00FF4CE8 /* AppDelegate.m in Sources */,
 				3D1187611BE77E8B00FF4CE8 /* main.m in Sources */,
+				3D1187801BE780BB00FF4CE8 /* UIView+VZBadge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
