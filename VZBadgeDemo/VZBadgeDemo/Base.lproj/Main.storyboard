@@ -16,21 +16,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="固件升级" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bD4-QT-p3T">
-                                <rect key="frame" x="253" y="289" width="68" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新的消息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bD4-QT-p3T">
+                                <rect key="frame" x="266" y="289" width="68" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZJ-rz-1J7">
+                                <rect key="frame" x="270" y="342" width="60" height="30"/>
+                                <animations/>
+                                <state key="normal" title="改变布局"/>
+                                <connections>
+                                    <action selector="changeLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="apg-aB-Eel"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bD4-QT-p3T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LrS-Eg-XM7"/>
-                            <constraint firstItem="bD4-QT-p3T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="253" id="cG1-Ux-Yyv"/>
+                            <constraint firstItem="kZJ-rz-1J7" firstAttribute="centerX" secondItem="bD4-QT-p3T" secondAttribute="centerX" id="Dfn-vv-SYN"/>
+                            <constraint firstItem="bD4-QT-p3T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HKi-gk-Pe6"/>
+                            <constraint firstItem="bD4-QT-p3T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cSq-S7-L6L"/>
+                            <constraint firstItem="kZJ-rz-1J7" firstAttribute="top" secondItem="bD4-QT-p3T" secondAttribute="bottom" constant="32" id="nP8-98-Shk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="bD4-QT-p3T" id="DXu-Ra-mEf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
