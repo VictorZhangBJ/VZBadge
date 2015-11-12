@@ -41,7 +41,7 @@
     self.badgeSize = CGSizeMake(7, 7);
     self.badgeTextColor = [UIColor whiteColor];
     self.badgeText = @"8";
-    self.badgeTextFont = [UIFont systemFontOfSize:13];
+    self.badgeTextFont = [UIFont systemFontOfSize:12];
     
     self.backgroundColor = [UIColor clearColor];
     _offset = 4.0;
@@ -51,7 +51,7 @@
 -(void)drawRect:(CGRect)rect
 {
     NSLog(@"drawRect");
-    CGRect circleRect = CGRectMake(rect.origin.x+_offset, rect.origin.y+_offset, rect.size.width-_offset, rect.size.height-_offset);
+    CGRect circleRect = CGRectMake(rect.origin.x+_offset, rect.origin.y+_offset, rect.size.width-_offset*2, rect.size.height-_offset*2);
     CGRect roundedRect = CGRectMake(rect.origin.x, rect.origin.y+_offset, rect.size.width, rect.size.height-_offset*2);
 
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -59,15 +59,14 @@
     
     
     if (self.badgeStyle == BadgeStyleNumber) {
-        CGContextSaveGState(context);
 
         //绘制text
         NSLog(@"draw text");
-        
+        if (self.badgeText.length>2) {
+            self.badgeText = @"99+";
+        }
         CGSize textSize = [self.badgeText sizeWithAttributes:@{NSFontAttributeName: self.badgeTextFont}];
         CGRect textRect = CGRectInset(rect, (CGRectGetWidth(rect) - textSize.width)/2.0, (CGRectGetHeight(rect) - textSize.height)/2.0);
-        [self.badgeText drawInRect:textRect withAttributes:@{NSFontAttributeName: self.badgeTextFont, NSForegroundColorAttributeName: self.badgeTextColor}];
-        CGContextRestoreGState(context);
         //绘制圆、椭圆
         CGContextSaveGState(context);
         CGContextSetFillColorWithColor(context, self.badgeColor.CGColor);
@@ -75,10 +74,18 @@
             //椭圆
             UIBezierPath *roundedRectPath = [UIBezierPath bezierPathWithRoundedRect:roundedRect cornerRadius:5.0];
             [roundedRectPath fill];
+            textRect = CGRectInset(roundedRect, (CGRectGetWidth(roundedRect) - textSize.width)/2.0, (CGRectGetHeight(roundedRect) - textSize.height)/2.0);
+
         }else{
             //圆
             CGContextFillEllipseInRect(context, circleRect);
+            textRect = CGRectInset(circleRect, (CGRectGetWidth(circleRect) - textSize.width)/2.0, (CGRectGetHeight(circleRect) - textSize.height)/2.0);
+
         }
+        CGContextRestoreGState(context);
+        
+        CGContextSaveGState(context);
+        [self.badgeText drawInRect:textRect withAttributes:@{NSFontAttributeName: self.badgeTextFont, NSForegroundColorAttributeName: self.badgeTextColor}];
         CGContextRestoreGState(context);
         
     }
@@ -88,13 +95,13 @@
 -(void)setBadgeOffset:(CGPoint)badgeOffset
 {
     _badgeOffset = badgeOffset;
-    [self setFrame:CGRectMake(self.badgeOffset.x, self.badgeOffset.y, self.badgeSize.width+_offset, self.badgeSize.height+_offset)];
+    [self setFrame:CGRectMake(self.badgeOffset.x, self.badgeOffset.y, self.badgeSize.width+_offset*2, self.badgeSize.height+_offset*2)];
 }
 
 -(void)setBadgeSize:(CGSize)badgeSize
 {
     _badgeSize = badgeSize;
-    [self setFrame:CGRectMake(self.badgeOffset.x, self.badgeOffset.y, self.badgeSize.width+_offset, self.badgeSize.height+_offset)];
+    [self setFrame:CGRectMake(self.badgeOffset.x, self.badgeOffset.y, self.badgeSize.width+_offset*2, self.badgeSize.height+_offset*2)];
 
 }
 

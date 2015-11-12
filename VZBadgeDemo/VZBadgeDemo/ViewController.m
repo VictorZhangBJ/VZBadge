@@ -27,7 +27,7 @@
     self.badgeView.badgeSize = CGSizeMake(15, 15);
     self.badgeView.badgeOffset = CGPointMake(72, 2);
     [self.label addSubview:self.badgeView];
-    self.badgeView.badgeText = @"9";
+    self.badgeView.badgeText = @"2";
     
     self.EllipseView = [VZBadgeView new];
     self.EllipseView.badgeStyle = BadgeStyleNumber;
@@ -42,7 +42,8 @@
 }
 - (IBAction)changeLayout:(id)sender {
     NSLog(@"改变布局");
-    [self.badgeView setBadgeStyle:BadgeStyleNumber];
+    static NSInteger badgeNum = 91;
+    self.badgeView.badgeText = [NSString stringWithFormat:@"%ld",badgeNum++];
 }
 
 - (void)didReceiveMemoryWarning {
